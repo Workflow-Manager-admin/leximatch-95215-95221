@@ -1,0 +1,86 @@
+.word-card {
+  perspective: 1000px;
+  width: 120px;
+  height: 160px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.word-card:hover:not(.flipped):not(.matched) {
+  transform: translateY(-5px);
+}
+
+.word-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.word-card.flipped .word-card-inner {
+  transform: rotateY(180deg);
+}
+
+.word-card-front, .word-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.word-card-front {
+  background-color: var(--kavia-orange);
+  color: white;
+}
+
+.word-card-back {
+  background-color: white;
+  color: var(--kavia-dark);
+  transform: rotateY(180deg);
+}
+
+.card-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  margin: 0;
+  word-break: break-word;
+}
+
+.word-card.matched {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.word-card.matched .word-card-inner {
+  background-color: #d1ffd1;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .word-card {
+    width: 100px;
+    height: 140px;
+    margin: 8px;
+  }
+  
+  .card-text {
+    font-size: 12px;
+  }
+}

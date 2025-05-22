@@ -1,0 +1,5 @@
+{
+  "task_description": "{'component_name': 'Main Container for LexiMatch', 'description': 'Primary container for LexiMatch implementation: An interactive word-matching game designed to enhance vocabulary skills by challenging players to connect words with their synonyms, antonyms, or precise definitions. The game offers an engaging and educational experience for language learners of all levels.', 'framework': 'react', 'platform': 'web'}",
+  "tasks": {},
+  "next_task_id": 1
+}
